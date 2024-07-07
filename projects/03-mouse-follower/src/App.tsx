@@ -20,6 +20,14 @@ function App() {
 
   }, [enabled])
 
+  useEffect(() => {
+    document.body.style.cursor = enabled ? 'none' : 'default';
+
+    return () => {
+      document.body.style.cursor = 'default';
+    }
+  }, [enabled])
+
   return (
     <main>
       <div style={{
